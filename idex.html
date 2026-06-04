@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ashiqur Rahman Ashique | Academic Portfolio</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            slate: {
+              940: '#0f172a',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <!-- Lucide Icons Development Script -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    /* Custom fade-in utility */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fadeIn {
+      animation: fadeIn 0.2s ease-out forwards;
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-900 dark:bg-slate-940 dark:text-slate-100 font-sans antialiased selection:bg-blue-500 selection:text-white transition-colors duration-300">
+
+  <!-- STICKY NAVBAR -->
+  <nav class="sticky top-0 z-50 backdrop-blur-md border-b bg-white/80 border-slate-200 dark:bg-slate-900/80 dark:border-slate-800 transition-colors duration-300">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <div class="flex-shrink-0">
+          <a href="#hero" class="text-xl font-bold tracking-tight hover:text-blue-600 transition-colors">
+            ARA<span class="text-blue-600">.</span>
+          </a>
+        </div>
+        
+        <!-- Desktop Navigation -->
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="#about" class="text-sm font-medium opacity-80 hover:opacity-100 hover:text-blue-600 transition-all">About</a>
+          <a href="#education" class="text-sm font-medium opacity-80 hover:opacity-100 hover:text-blue-600 transition-all">Education</a>
+          <a href="#projects" class="text-sm font-medium opacity-80 hover:opacity-100 hover:text-blue-600 transition-all">Projects</a>
+          <a href="#skills" class="text-sm font-medium opacity-80 hover:opacity-100 hover:text-blue-600 transition-all">Skills</a>
+          <a href="#experience" class="text-sm font-medium opacity-80 hover:opacity-100 hover:text-blue-600 transition-all">Experience</a>
+          <a href="#awards" class="text-sm font-medium opacity-80 hover:opacity-100 hover:text-blue-600 transition-all">Awards</a>
+          <a href="#contact" class="text-sm font-medium opacity-80 hover:opacity-100 hover:text-blue-600 transition-all">Contact</a>
+          
+          <button id="theme-toggle" class="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-yellow-400 transition-colors" aria-label="Toggle theme">
+            <i data-lucide="moon" id="theme-icon" class="w-[18px] h-[18px]"></i>
+          </button>
+        </div>
+
+        <!-- Mobile menu controls -->
+        <div class="md:hidden flex items-center space-x-4">
+          <button id="theme-toggle-mobile" class="p-2 rounded-lg text-slate-600 dark:text-yellow-400">
+            <i data-lucide="moon" id="theme-icon-mobile" class="w-[18px] h-[18px]"></i>
+          </button>
+          <button id="menu-toggle" class="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">
+            <i data-lucide="menu" id="menu-icon" class="w-6 h-6"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Menu -->
+    <div id="mobile-menu" class="hidden md:hidden border-b animate-fadeIn bg-white border-slate-200 dark:bg-slate-900 dark:border-slate-800">
+      <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <a href="#about" class="mobile-link flex items-center space-x-3 px-3 py-3 rounded-md text-base font-medium opacity-80 hover:bg-blue-50 dark:hover:bg-slate-800 hover:text-blue-600"><i data-lucide="user" class="w-[18px] h-[18px]"></i><span>About</span></a>
+        <a href="#education" class="mobile-link flex items-center space-x-3 px-3 py-3 rounded-md text-base font-medium opacity-80 hover:bg-blue-50 dark:hover:bg-slate-800 hover:text-blue-600"><i data-lucide="book-open" class="w-[18px] h-[18px]"></i><span>Education</span></a>
+        <a href="#projects" class="mobile-link flex items-center space-x-3 px-3 py-3 rounded-md text-base font-medium opacity-80 hover:bg-blue-50 dark:hover:bg-slate-800 hover:text-blue-600"><i data-lucide="cpu" class="w-[18px] h-[18px]"></i><span>Projects</span></a>
+        <a href="#skills" class="mobile-link flex items-center space-x-3 px-3 py-3 rounded-md text-base font-medium opacity-80 hover:bg-blue-50 dark:hover:bg-slate-800 hover:text-blue-600"><i data-lucide="file-text" class="w-[18px] h-[18px]"></i><span>Skills</span></a>
+        <a href="#experience" class="mobile-link flex items-center space-x-3 px-3 py-3 rounded-md text-base font-medium opacity-80 hover:bg-blue-50 dark:hover:bg-slate-800 hover:text-blue-600"><i data-lucide="briefcase" class="w-[18px] h-[18px]"></i><span>Experience</span></a>
+        <a href="#awards" class="mobile-link flex items-center space-x-3 px-3 py-3 rounded-md text-base font-medium opacity-80 hover:bg-blue-50 dark:hover:bg-slate-800 hover:text-blue-600"><i data-lucide="award" class="w-[18px] h-[18px]"></i><span>Awards</span></a>
+        <a href="#contact" class="mobile-link flex items-center space-x-3 px-3 py-3 rounded-md text-base font-medium opacity-80 hover:bg-blue-50 dark:hover:bg-slate-800 hover:text-blue-600"><i data-lucide="mail" class="w-[18px] h-[18px]"></i><span>Contact</span></a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-32">
+    
+    <!-- 1. HERO SECTION -->
+    <section id="hero" class="pt-8 md:pt-20 flex flex-col-reverse md:flex-row items-center justify-between gap-12">
+      <div class="flex-1 space-y-6 text-center md:text-left">
+        <div class="space-y-2">
+          <p class="text-blue-600 font-semibold tracking-wide uppercase text-sm">Welcome to my Academic Portfolio</p>
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight">Ashiqur Rahman Ashique</h1>
+          <p class="text-xl md:text-2xl font-medium opacity-70">Electrical & Electronic Engineering Graduate</p>
+        </div>
+        <p class="max-w-2xl text-base sm:text-lg opacity-80 leading-relaxed">
+          Motivated EEE graduate focused on circuit analytics, autonomous systems, embedded microcontrollers, and engineering mentorship[cite: 1]. Passionate about bridging theoretical simulations with practical hardware engineering solutions[cite: 1].
+        </p>
+        <div class="flex flex-wrap justify-center md:justify-start gap-4 pt-2">
+          <a href="#contact" class="inline-flex items-center space-x-2 px-6 py-3 rounded-lg font-medium text-white bg-blue-600 hover:bg-blue-700 transition-all shadow-sm hover:shadow-md">
+            <i data-lucide="mail" class="w-[18px] h-[18px]"></i>
+            <span>Contact Me</span>
+          </a>
+          <a href="#" class="inline-flex items-center space-x-2 px-6 py-3 rounded-lg font-medium border border-slate-300 hover:bg-slate-100 dark:border-slate-700 dark:hover:bg-slate-800 transition-all">
+            <i data-lucide="download" class="w-[18px] h-[18px]"></i>
+            <span>Download CV</span>
+          </a>
+        </div>
+      </div>
+      <div class="flex justify-center w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 relative">
+        <div class="absolute inset-0 bg-gradient-to-tr from-blue-600 to-indigo-400 rounded-full blur-xl opacity-20 dark:opacity-30 animate-pulse"></div>
+        <div class="w-full h-full rounded-2xl border-4 border-white dark:border-slate-800 overflow-hidden shadow-xl">
+          <!-- <div class="w-full h-full bg-slate-300 dark:bg-slate-700 flex items-center justify-center">
+            <i data-lucide="user" class="w-20 h-20 opacity-40"></i>
+          </div> -->
+            <img 
+                src="./profile.png" 
+                alt="Ashiqur Rahman Ashique" 
+                class="w-full h-full object-cover"
+            />
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="border-slate-200 dark:border-slate-800" />
+
+    <!-- 2. ABOUT ME -->
+    <section id="about" class="space-y-8 scroll-mt-20">
+      <div class="space-y-2">
+        <h2 class="text-3xl font-bold tracking-tight">About Me</h2>
+        <div class="h-1 w-12 bg-blue-600 rounded"></div>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8 text-base opacity-80 leading-relaxed">
+        <div class="md:col-span-2 space-y-4">
+          <p>
+            I hold a Bachelor of Science in Electrical and Electronics Engineering from Chittagong Independent University[cite: 1]. My foundational technical path is built on design precision, circuit optimizations, and analyzing micro-architectures[cite: 1].
+          </p>
+          <p>
+            Throughout my academic tenure, I have balanced rigorous engineered coursework with real-world technical leadership—mentoring student pipelines through global benchmark platforms like the World Robotics Olympiad Bangladesh and instructing robotics configurations directly within school frameworks[cite: 1].
+          </p>
+          <p>
+            My strategic career objective focuses on continuous operational growth in complex power system evaluations, algorithmic signal design, software co-simulations, and cultivating intuitive knowledge sharing through structured educational environments[cite: 1].
+          </p>
+        </div>
+        <div class="p-6 rounded-xl border bg-white border-slate-100 dark:bg-slate-900 dark:border-slate-800 space-y-4">
+          <h3 class="font-semibold text-lg text-slate-900 dark:text-white">Research Interests</h3>
+          <ul class="space-y-2 text-sm">
+            <li class="flex items-center space-x-2">
+              <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-blue-600"></i>
+              <span>Embedded Systems & IoT</span>
+            </li>
+            <li class="flex items-center space-x-2">
+              <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-blue-600"></i>
+              <span>Robotics & Control Logic</span>
+            </li>
+            <li class="flex items-center space-x-2">
+              <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-blue-600"></i>
+              <span>Circuit Analysis & Proteus Modeling</span>
+            </li>
+            <li class="flex items-center space-x-2">
+              <i data-lucide="chevron-right" class="w-3.5 h-3.5 text-blue-600"></i>
+              <span>MATLAB Power Optimizations</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. EDUCATION -->
+    <section id="education" class="space-y-8 scroll-mt-20">
+      <div class="space-y-2">
+        <h2 class="text-3xl font-bold tracking-tight">Education</h2>
+        <div class="h-1 w-12 bg-blue-600 rounded"></div>
+      </div>
+      
+      <div class="relative border-l-2 ml-4 md:ml-6 border-slate-200 dark:border-slate-800 space-y-12">
+        <!-- BSC -->
+        <div class="relative pl-8 md:pl-10">
+          <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-blue-600 border-4 border-slate-50 dark:border-slate-940"></div>
+          <div class="flex flex-col md:flex-row md:justify-between md:items-baseline gap-1">
+            <h3 class="text-xl font-bold">Bachelor of Science in Electrical and Electronics Engineering</h3>
+            <span class="text-sm font-semibold opacity-60">2021 — 2025</span>
+          </div>
+          <p class="text-blue-600 dark:text-blue-400 font-medium text-sm">Chittagong Independent University (CIU)</p>
+          <p class="mt-2 text-sm opacity-70 max-w-3xl">
+            Comprehensive training across power engineering systems, signal networks, embedded systems validation, and industrial logic design[cite: 1]. Actively involved in departmental lab architecture setups and academic project clubs[cite: 1].
+          </p>
+        </div>
+        <!-- HSC -->
+        <div class="relative pl-8 md:pl-10">
+          <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-slate-300 dark:bg-slate-700 border-4 border-slate-50 dark:border-slate-940"></div>
+          <div class="flex flex-col md:flex-row md:justify-between md:items-baseline gap-1">
+            <h3 class="text-xl font-bold">Higher Secondary Certificate (HSC)</h3>
+            <span class="text-sm font-semibold opacity-60">2018 — 2020</span>
+          </div>
+          <p class="text-blue-600 dark:text-blue-400 font-medium text-sm">J.M Sen College, Chittagong</p>
+          <p class="mt-2 text-sm opacity-70">Concentration in Science (Physics, Chemistry, Higher Mathematics)[cite: 1].</p>
+        </div>
+        <!-- SSC -->
+        <div class="relative pl-8 md:pl-10">
+          <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-slate-300 dark:bg-slate-700 border-4 border-slate-50 dark:border-slate-940"></div>
+          <div class="flex flex-col md:flex-row md:justify-between md:items-baseline gap-1">
+            <h3 class="text-xl font-bold">Secondary School Certificate (SSC)</h3>
+            <span class="text-sm font-semibold opacity-60">2016 — 2017</span>
+          </div>
+          <p class="text-blue-600 dark:text-blue-400 font-medium text-sm">Chittagong Laboratory School and College</p>
+          <p class="mt-2 text-sm opacity-70">Concentration in Science[cite: 1].</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. PROJECTS -->
+    <section id="projects" class="space-y-8 scroll-mt-20">
+      <div class="space-y-2">
+        <h2 class="text-3xl font-bold tracking-tight">Engineering Projects</h2>
+        <div class="h-1 w-12 bg-blue-600 rounded"></div>
+      </div>
+
+      <!-- Featured Project -->
+      <div class="p-6 md:p-8 rounded-2xl border bg-white border-slate-200 dark:bg-slate-900 dark:border-slate-800 flex flex-col lg:flex-row gap-8 items-center">
+        <div class="flex-1 space-y-4">
+          <span class="text-xs font-bold uppercase tracking-wider text-blue-600">Featured System Layout</span>
+          <h3 class="text-2xl font-bold">IoT-Based Smart Mosquito Trap</h3>
+          <p class="opacity-80 text-sm sm:text-base leading-relaxed">
+            An automated biomimetic control ecosystem leveraging sensory arrays, calibrated microcontrollers, and logic control structures to capture pests safely[cite: 1]. Integrates automated trigger scheduling and remote sensor data monitoring modules[cite: 1].
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="text-xs px-2.5 py-1 rounded-md font-medium bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300">IoT</span>
+            <span class="text-xs px-2.5 py-1 rounded-md font-medium bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300">Embedded C</span>
+            <span class="text-xs px-2.5 py-1 rounded-md font-medium bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300">Sensors</span>
+            <span class="text-xs px-2.5 py-1 rounded-md font-medium bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300">Microchip Studio</span>
+            <span class="text-xs px-2.5 py-1 rounded-md font-medium bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300">Proteus</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project Grid -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="p-6 rounded-xl border bg-white border-slate-200 dark:bg-slate-900/50 dark:border-slate-800 flex flex-col justify-between hover:shadow-md transition-all">
+          <div class="space-y-3">
+            <h4 class="text-lg font-bold tracking-tight">DC to DC Booster System</h4>
+            <p class="text-sm opacity-75">Designed high-efficiency step-up switching voltage regulators optimized for embedded power supply architectures[cite: 1].</p>
+          </div>
+          <div class="flex flex-wrap gap-1.5 pt-4">
+            <span class="text-[11px] font-semibold px-2 py-0.5 rounded bg-blue-500/10 text-blue-600 dark:text-blue-400">Power Electronics</span>
+          </div>
+        </div>
+
+        <div class="p-6 rounded-xl border bg-white border-slate-200 dark:bg-slate-900/50 dark:border-slate-800 flex flex-col justify-between hover:shadow-md transition-all">
+          <div class="space-y-3">
+            <h4 class="text-lg font-bold tracking-tight">Robo Soccer BOT Platform</h4>
+            <p class="text-sm opacity-75">Co-developed high-velocity robotic vehicles featuring high-torque motor drivers and RF remote control routing[cite: 1].</p>
+          </div>
+          <div class="flex flex-wrap gap-1.5 pt-4">
+            <span class="text-[11px] font-semibold px-2 py-0.5 rounded bg-blue-500/10 text-blue-600 dark:text-blue-400">Robotics</span>
+          </div>
+        </div>
+
+        <div class="p-6 rounded-xl border bg-white border-slate-200 dark:bg-slate-900/50 dark:border-slate-800 flex flex-col justify-between hover:shadow-md transition-all">
+          <div class="space-y-3">
+            <h4 class="text-lg font-bold tracking-tight">8×8 LED Matrix Visual Display</h4>
+            <p class="text-sm opacity-75">Programmed real-time custom visualization arrays utilizing dynamic multiplexing logic routines[cite: 1].</p>
+          </div>
+          <div class="flex flex-wrap gap-1.5 pt-4">
+            <span class="text-[11px] font-semibold px-2 py-0.5 rounded bg-blue-500/10 text-blue-600 dark:text-blue-400">Microcontrollers</span>
+          </div>
+        </div>
+
+        <div class="p-6 rounded-xl border bg-white border-slate-200 dark:bg-slate-900/50 dark:border-slate-800 flex flex-col justify-between hover:shadow-md transition-all">
+          <div class="space-y-3">
+            <h4 class="text-lg font-bold tracking-tight">Voltage Regulated System</h4>
+            <p class="text-sm opacity-75">Engineered robust and stable linear and switching regulated systems with continuous short-circuit protection safeguards[cite: 1].</p>
+          </div>
+          <div class="flex flex-wrap gap-1.5 pt-4">
+            <span class="text-[11px] font-semibold px-2 py-0.5 rounded bg-blue-500/10 text-blue-600 dark:text-blue-400">Analog Design</span>
+          </div>
+        </div>
+
+        <div class="p-6 rounded-xl border bg-white border-slate-200 dark:bg-slate-900/50 dark:border-slate-800 flex flex-col justify-between hover:shadow-md transition-all">
+          <div class="space-y-3">
+            <h4 class="text-lg font-bold tracking-tight">Motor Speed Controller</h4>
+            <p class="text-sm opacity-75">Implemented closed-loop PWM drive controls designed for accurate rotational velocity scaling operations[cite: 1].</p>
+          </div>
+          <div class="flex flex-wrap gap-1.5 pt-4">
+            <span class="text-[11px] font-semibold px-2 py-0.5 rounded bg-blue-500/10 text-blue-600 dark:text-blue-400">PWM Control</span>
+          </div>
+        </div>
+
+        <div class="p-6 rounded-xl border bg-white border-slate-200 dark:bg-slate-900/50 dark:border-slate-800 flex flex-col justify-between hover:shadow-md transition-all">
+          <div class="space-y-3">
+            <h4 class="text-lg font-bold tracking-tight">Obstacle Detector</h4>
+            <p class="text-sm opacity-75">Configured multi-echo ultrasonic distance sensor validation processing blocks mapped for real-time evasive navigation paths[cite: 1].</p>
+          </div>
+          <div class="flex flex-wrap gap-1.5 pt-4">
+            <span class="text-[11px] font-semibold px-2 py-0.5 rounded bg-blue-500/10 text-blue-600 dark:text-blue-400">Sensor Integration</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. SKILLS -->
+    <section id="skills" class="space-y-8 scroll-mt-20">
+      <div class="space-y-2">
+        <h2 class="text-3xl font-bold tracking-tight">Technical Portfolio Skills</h2>
+        <div class="h-1 w-12 bg-blue-600 rounded"></div>
+      </div>
+
+      <div class="grid sm:grid-cols-2 gap-6">
+        <div class="p-6 rounded-xl border bg-white border-slate-100 dark:bg-slate-900 dark:border-slate-800">
+          <h3 class="font-bold text-sm tracking-wide uppercase text-blue-600 dark:text-blue-400 mb-4">Programming Languages</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="text-sm px-3 py-1.5 rounded-lg font-medium bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 transition-all">C/C++</span>
+            <span class="text-sm px-3 py-1.5 rounded-lg font-medium bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 transition-all">Python</span>
+            <span class="text-sm px-3 py-1.5 rounded-lg font-medium bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 transition-all">Embedded C</span>
+          </div>
+        </div>
+
+        <div class="p-6 rounded-xl border bg-white border-slate-100 dark:bg-slate-900 dark:border-slate-800">
+          <h3 class="font-bold text-sm tracking-wide uppercase text-blue-600 dark:text-blue-400 mb-4">Simulation & Modeling Systems</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="text-sm px-3 py-1.5 rounded-lg font-medium bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 transition-all">Proteus Simulation</span>
+            <span class="text-sm px-3 py-1.5 rounded-lg font-medium bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 transition-all">MATLAB Analysis</span>
+            <span class="text-sm px-3 py-1.5 rounded-lg font-medium bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 transition-all">Microchip Studio</span>
+          </div>
+        </div>
+
+        <div class="p-6 rounded-xl border bg-white border-slate-100 dark:bg-slate-900 dark:border-slate-800">
+          <h3 class="font-bold text-sm tracking-wide uppercase text-blue-600 dark:text-blue-400 mb-4">Engineering & Productivity Design</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="text-sm px-3 py-1.5 rounded-lg font-medium bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 transition-all">Microsoft Visio</span>
+            <span class="text-sm px-3 py-1.5 rounded-lg font-medium bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 transition-all">Microsoft Excel</span>
+            <span class="text-sm px-3 py-1.5 rounded-lg font-medium bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 transition-all">Microsoft Word</span>
+          </div>
+        </div>
+
+        <div class="p-6 rounded-xl border bg-white border-slate-100 dark:bg-slate-900 dark:border-slate-800">
+          <h3 class="font-bold text-sm tracking-wide uppercase text-blue-600 dark:text-blue-400 mb-4">Visual Production & Media</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="text-sm px-3 py-1.5 rounded-lg font-medium bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 transition-all">Adobe Premiere Pro</span>
+            <span class="text-sm px-3 py-1.5 rounded-lg font-medium bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 transition-all">Canva Graphics</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. LEADERSHIP & EXPERIENCE -->
+    <section id="experience" class="space-y-8 scroll-mt-20">
+      <div class="space-y-2">
+        <h2 class="text-3xl font-bold tracking-tight">Professional Experience & Leadership</h2>
+        <div class="h-1 w-12 bg-blue-600 rounded"></div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="p-6 rounded-xl border bg-white border-slate-200 dark:bg-slate-900 dark:border-slate-800 space-y-4">
+          <h3 class="text-xl font-bold border-b pb-2 flex items-center gap-2 border-slate-200 dark:border-slate-800">
+            <i data-lucide="briefcase" class="text-blue-600"></i> Professional Mentor Roles
+          </h3>
+          <div class="space-y-4">
+            <div>
+              <div class="flex justify-between text-sm font-semibold">
+                <h4>Robotics Trainer</h4>
+                <span class="opacity-60">10/2025 — Present</span>
+              </div>
+              <p class="text-xs text-blue-600 dark:text-blue-400 font-medium">Al Hadiyah International School, Chittagong</p>
+              <p class="text-xs opacity-75 mt-1">Leading foundational hardware and logical algorithm curriculum pathways for student cohorts[cite: 1].</p>
+            </div>
+            <div>
+              <div class="flex justify-between text-sm font-semibold">
+                <h4>Certified Mentor</h4>
+                <span class="opacity-60">06/2025 — 10/2025</span>
+              </div>
+              <p class="text-xs text-blue-600 dark:text-blue-400 font-medium">World Robotics Olympiad Bangladesh (Faujdarhat Cadet College)</p>
+              <p class="text-xs opacity-75 mt-1">Instructed and trained specialized student pipelines in micro:bit architectural design logic[cite: 1].</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-6 rounded-xl border bg-white border-slate-200 dark:bg-slate-900 dark:border-slate-800 space-y-4">
+          <h3 class="text-xl font-bold border-b pb-2 flex items-center gap-2 border-slate-200 dark:border-slate-800">
+            <i data-lucide="user" class="text-blue-600"></i> Student Executive Boards
+          </h3>
+          <div class="space-y-3 text-sm">
+            <div class="flex justify-between items-start">
+              <div>
+                <h4 class="font-semibold text-sm">IEEE CIU Student Branch</h4>
+                <p class="text-xs opacity-70">Joint Organizing Secretary</p>
+              </div>
+              <span class="text-xs font-medium opacity-50">01/2024 — 08/2025</span>
+            </div>
+            <div class="flex justify-between items-start">
+              <div>
+                <h4 class="font-semibold text-sm">CIU Robotics Club</h4>
+                <p class="text-xs opacity-70">Executive Board Member</p>
+              </div>
+              <span class="text-xs font-medium opacity-50">01/2024 — 08/2025</span>
+            </div>
+            <div class="flex justify-between items-start">
+              <div>
+                <h4 class="font-semibold text-sm">Independent University Science & Engineering Club</h4>
+                <p class="text-xs opacity-70">Executive Board Member</p>
+              </div>
+              <span class="text-xs font-medium opacity-50">01/2024 — 07/2025</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. ACHIEVEMENTS -->
+    <section id="awards" class="space-y-8 scroll-mt-20">
+      <div class="space-y-2">
+        <h2 class="text-3xl font-bold tracking-tight">Achievements & Certificates</h2>
+        <div class="h-1 w-12 bg-blue-600 rounded"></div>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="p-5 rounded-xl border bg-white border-slate-100 dark:bg-slate-900 dark:border-slate-800 flex gap-4">
+          <div class="mt-1"><i data-lucide="award" class="text-blue-600 w-5 h-5"></i></div>
+          <div class="space-y-1">
+            <h4 class="font-bold text-sm leading-tight text-slate-900 dark:text-white">PUB Robo Soccer 2023</h4>
+            <p class="text-xs opacity-75 leading-relaxed">Showcased custom embedded hardware configurations under competitive system frameworks[cite: 1].</p>
+          </div>
+        </div>
+
+        <div class="p-5 rounded-xl border bg-white border-slate-100 dark:bg-slate-900 dark:border-slate-800 flex gap-4">
+          <div class="mt-1"><i data-lucide="award" class="text-blue-600 w-5 h-5"></i></div>
+          <div class="space-y-1">
+            <h4 class="font-bold text-sm leading-tight text-slate-900 dark:text-white">Bangabandhu Innovation Fair 2024</h4>
+            <p class="text-xs opacity-75 leading-relaxed">Demonstrated innovative micro-controller solution models for scalable consumer systems[cite: 1].</p>
+          </div>
+        </div>
+
+        <div class="p-5 rounded-xl border bg-white border-slate-100 dark:bg-slate-900 dark:border-slate-800 flex gap-4">
+          <div class="mt-1"><i data-lucide="award" class="text-blue-600 w-5 h-5"></i></div>
+          <div class="space-y-1">
+            <h4 class="font-bold text-sm leading-tight text-slate-900 dark:text-white">Robo Soccer — 4th Place</h4>
+            <p class="text-xs opacity-75 leading-relaxed">Achieved top 4 standing at the Southern University Tech Fest 2023 development competition[cite: 1].</p>
+          </div>
+        </div>
+
+        <div class="p-5 rounded-xl border bg-white border-slate-100 dark:bg-slate-900 dark:border-slate-800 flex gap-4">
+          <div class="mt-1"><i data-lucide="award" class="text-blue-600 w-5 h-5"></i></div>
+          <div class="space-y-1">
+            <h4 class="font-bold text-sm leading-tight text-slate-900 dark:text-white">Photography Workshop</h4>
+            <p class="text-xs opacity-75 leading-relaxed">Completed formal visual composition training under professional guidance from Shoeb Faruquee[cite: 1].</p>
+          </div>
+        </div>
+
+        <div class="p-5 rounded-xl border bg-white border-slate-100 dark:bg-slate-900 dark:border-slate-800 flex gap-4">
+          <div class="mt-1"><i data-lucide="award" class="text-blue-600 w-5 h-5"></i></div>
+          <div class="space-y-1">
+            <h4 class="font-bold text-sm leading-tight text-slate-900 dark:text-white">CIU Convocation 2025 Cert</h4>
+            <p class="text-xs opacity-75 leading-relaxed">Awarded dedicated operational certificate for extensive event synchronization support[cite: 1].</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. REFERENCES -->
+    <section class="space-y-8">
+      <div class="space-y-2">
+        <h2 class="text-3xl font-bold tracking-tight">Academic References</h2>
+        <div class="h-1 w-12 bg-blue-600 rounded"></div>
+      </div>
+      <div class="grid sm:grid-cols-3 gap-6">
+        <div class="p-5 rounded-xl border text-center space-y-1 bg-white border-slate-200 dark:bg-slate-900/40 dark:border-slate-800">
+          <h4 class="font-bold text-base text-slate-900 dark:text-white">Dr. Rubell Sen Goopta</h4>
+          <p class="text-xs text-blue-600 dark:text-blue-400 font-medium">Associate Professor, Dept. of EEE</p>
+          <p class="text-xs opacity-60">Chittagong Independent University</p>
+        </div>
+        <div class="p-5 rounded-xl border text-center space-y-1 bg-white border-slate-200 dark:bg-slate-900/40 dark:border-slate-800">
+          <h4 class="font-bold text-base text-slate-900 dark:text-white">Dr. Aseef Iqbal</h4>
+          <p class="text-xs text-blue-600 dark:text-blue-400 font-medium">Professor, Dept. of CSE</p>
+          <p class="text-xs opacity-60">Chittagong Independent University</p>
+        </div>
+        <div class="p-5 rounded-xl border text-center space-y-1 bg-white border-slate-200 dark:bg-slate-900/40 dark:border-slate-800">
+          <h4 class="font-bold text-base text-slate-900 dark:text-white">Mr. Rakayet Rafi</h4>
+          <p class="text-xs text-blue-600 dark:text-blue-400 font-medium">Lecturer</p>
+          <p class="text-xs opacity-60">Southeast University</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. CONTACT -->
+    <section id="contact" class="space-y-8 scroll-mt-20">
+      <div class="space-y-2">
+        <h2 class="text-3xl font-bold tracking-tight">Get in Touch</h2>
+        <div class="h-1 w-12 bg-blue-600 rounded"></div>
+      </div>
+
+      <div class="grid md:grid-cols-5 gap-8">
+        <div class="md:col-span-2 space-y-6">
+          <p class="text-sm sm:text-base opacity-80 leading-relaxed">
+            If you are looking to collaborate on hardware design, embedded systems logic development, or robotics academic pipelines, feel free to send a direct message[cite: 1].
+          </p>
+          
+          <div class="space-y-3 text-sm">
+            <a href="mailto:mdashiqurrahman044@gmail.com" class="flex items-center space-x-3 opacity-80 hover:opacity-100 transition-opacity">
+              <i data-lucide="mail" class="w-4 h-4 text-blue-600"></i>
+              <span>mdashiqurrahman044@gmail.com</span>
+            </a>
+            <div class="flex items-center space-x-3 opacity-80">
+              <span class="text-xs px-2 py-0.5 rounded font-mono bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300">Location</span>
+              <span>Chawkbazar, Chittagong, Bangladesh</span>
+            </div>
+          </div>
+
+          <div class="flex space-x-4 pt-2">
+            <a href="https://github.com/Ashiqur123abx" target="_blank" class="p-2.5 rounded-lg border bg-white border-slate-200 hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-900 dark:hover:bg-slate-800 hover:text-blue-600 transition-all">
+              <i data-lucide="github" class="w-5 h-5"></i>
+            </a>
+          </div>
+        </div>
+
+        <form class="md:col-span-3 space-y-4" onsubmit="event.preventDefault();">
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div class="space-y-1.5">
+              <label class="text-xs font-semibold tracking-wide uppercase opacity-75">Full Name</label>
+              <input type="text" class="w-full text-sm px-4 py-2.5 rounded-lg border outline-none focus:border-blue-600 transition-colors bg-white border-slate-200 dark:bg-slate-900 dark:border-slate-800" placeholder="Your Name" />
+            </div>
+            <div class="space-y-1.5">
+              <label class="text-xs font-semibold tracking-wide uppercase opacity-75">Email Address</label>
+              <input type="email" class="w-full text-sm px-4 py-2.5 rounded-lg border outline-none focus:border-blue-600 transition-colors bg-white border-slate-200 dark:bg-slate-900 dark:border-slate-800" placeholder="your.email@domain.com" />
+            </div>
+          </div>
+          <div class="space-y-1.5">
+            <label class="text-xs font-semibold tracking-wide uppercase opacity-75">Message</label>
+            <textarea rows="4" class="w-full text-sm px-4 py-2.5 rounded-lg border outline-none focus:border-blue-600 transition-colors bg-white border-slate-200 dark:bg-slate-900 dark:border-slate-800" placeholder="Type your message details here..."></textarea>
+          </div>
+          <button type="submit" class="w-full sm:w-auto px-6 py-3 text-sm font-semibold rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition-colors shadow-sm">
+            Send Message
+          </button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t text-xs font-medium opacity-60 bg-slate-100 border-slate-200 dark:bg-slate-950 dark:border-slate-900 transition-colors duration-300 mt-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p>© <span id="year"></span> Ashiqur Rahman Ashique. All rights reserved.</p>
+      <div class="flex space-x-6">
+        <a href="#about" class="hover:text-blue-600 transition-colors">About</a>
+        <a href="#projects" class="hover:text-blue-600 transition-colors">Projects</a>
+        <a href="#contact" class="hover:text-blue-600 transition-colors">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- VANILLA JAVASCRIPT LOGIC -->
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    // Set Dynamic Footer Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Dark/Light Mode Engine
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const themeToggleMobileBtn = document.getElementById('theme-toggle-mobile');
+    const htmlElement = document.documentElement;
+
+    function toggleDarkMode() {
+      const isDark = htmlElement.classList.toggle('dark');
+      const iconName = isDark ? 'sun' : 'moon';
+      
+      // Update main icon
+      document.getElementById('theme-icon').setAttribute('data-lucide', iconName);
+      // Update mobile icon
+      document.getElementById('theme-icon-mobile').setAttribute('data-lucide', iconName);
+      
+      // Re-render icons
+      lucide.createIcons();
+    }
+
+    themeToggleBtn.addEventListener('click', toggleDarkMode);
+    themeToggleMobileBtn.addEventListener('click', toggleDarkMode);
+
+    // Mobile Navigation Drawer Toggle
+    const menuToggleBtn = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+
+    menuToggleBtn.addEventListener('click', () => {
+      const isHidden = mobileMenu.classList.toggle('hidden');
+      menuIcon.setAttribute('data-lucide', isHidden ? 'menu' : 'x');
+      lucide.createIcons();
+    });
+
+    // Close Mobile Drawer when a link is clicked
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        menuIcon.setAttribute('data-lucide', 'menu');
+        lucide.createIcons();
+      });
+    });
+  </script>
+</body>
+</html>
