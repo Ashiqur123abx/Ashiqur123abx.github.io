@@ -516,20 +516,20 @@
           </div>
         </div>
 
-        <form class="md:col-span-3 space-y-4" onsubmit="event.preventDefault();">
+        <form class="md:col-span-3 space-y-4" action="mailto:mdashiqurrahman044@gmail.com" method="POST" enctype="text/plain">
           <div class="grid sm:grid-cols-2 gap-4">
             <div class="space-y-1.5">
               <label class="text-xs font-semibold tracking-wide uppercase opacity-75">Full Name</label>
-              <input type="text" class="w-full text-sm px-4 py-2.5 rounded-lg border outline-none focus:border-blue-600 transition-colors bg-white border-slate-200 dark:bg-slate-900 dark:border-slate-800" placeholder="Your Name" />
+              <input type="text" name="Sender_Name" required class="w-full text-sm px-4 py-2.5 rounded-lg border outline-none focus:border-blue-600 transition-colors bg-white border-slate-200 dark:bg-slate-900 dark:border-slate-800" placeholder="Your Name" />
             </div>
             <div class="space-y-1.5">
               <label class="text-xs font-semibold tracking-wide uppercase opacity-75">Email Address</label>
-              <input type="email" class="w-full text-sm px-4 py-2.5 rounded-lg border outline-none focus:border-blue-600 transition-colors bg-white border-slate-200 dark:bg-slate-900 dark:border-slate-800" placeholder="your.email@domain.com" />
+              <input type="email" name="Sender_Email" required class="w-full text-sm px-4 py-2.5 rounded-lg border outline-none focus:border-blue-600 transition-colors bg-white border-slate-200 dark:bg-slate-900 dark:border-slate-800" placeholder="your.email@domain.com" />
             </div>
           </div>
           <div class="space-y-1.5">
             <label class="text-xs font-semibold tracking-wide uppercase opacity-75">Message</label>
-            <textarea rows="4" class="w-full text-sm px-4 py-2.5 rounded-lg border outline-none focus:border-blue-600 transition-colors bg-white border-slate-200 dark:bg-slate-900 dark:border-slate-800" placeholder="Type your message details here..."></textarea>
+            <textarea rows="4" name="Message_Content" required class="w-full text-sm px-4 py-2.5 rounded-lg border outline-none focus:border-blue-600 transition-colors bg-white border-slate-200 dark:bg-slate-900 dark:border-slate-800" placeholder="Type your message details here..."></textarea>
           </div>
           <button type="submit" class="w-full sm:w-auto px-6 py-3 text-sm font-semibold rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition-colors shadow-sm">
             Send Message
